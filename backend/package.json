@@ -4,12 +4,15 @@
   "description": "Assignment",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "devStart": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dharneesh",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "express-jwt": "^8.4.1",
     "mysql": "^2.18.1",

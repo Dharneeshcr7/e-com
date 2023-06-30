@@ -5,6 +5,7 @@ const port = 5000;
 var jwt = require('jsonwebtoken');
 var cors = require('cors');
 var fetchuser = require('./middleware/fetchuser');
+require("dotenv").config()
 
 app.use(cors())
 
@@ -12,12 +13,13 @@ const JWT_SECRET = 'Dharneesh_company';
 
 
 const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: 'password',
-  database: 'mydatabase',
+  host: process.env.DB_HOST,
+  user: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DATABASE,
   
 });
+console.log(process.env.DB_HOST);
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -135,8 +137,9 @@ app.post('/customer', fetchuser,(req, res) => {
   
 
 
+  const PORT = process.env.PORT || 5000
 
   
-  app.listen(port, () => {
+  app.listen(PORT, () => {
     console.log(`Server is running on port ${port}`);
   });
