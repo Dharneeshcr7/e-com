@@ -38,7 +38,7 @@ app.use(express.static('public'));
     pool.query('SELECT * FROM auth WHERE username = ? AND password = ?', [id, password], (err, results) => {
       if (err) {
         console.error(err);
-        res.status(500).json({ error: 'Internal Server Error' });
+        res.status(500).json({ error: 'Database not connected' });
       } else {
         if (results.length === 0) {
           res.status(401).json({ error: 'Invalid credentials' });
