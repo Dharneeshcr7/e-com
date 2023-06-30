@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import { useNavigate } from "react-router-dom";
 
+const host="https://uninterested-bee-swimsuit.cyclic.app";
 
 const Login = () => {
 
@@ -14,7 +15,7 @@ const Login = () => {
 
     const handleSubmit=async(e)=>{
         e.preventDefault();
-        const response = await fetch(`http://localhost:5000/`, {
+        const response = await fetch(`${host}`, {
             method: "POST",
       
             headers: {

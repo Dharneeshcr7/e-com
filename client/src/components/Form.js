@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import {useNavigate } from "react-router-dom";
-
+const host="https://uninterested-bee-swimsuit.cyclic.app/customer";
 const Form=()=> {
   const [formData, setFormData] = useState({
     orderDate: '',
@@ -22,7 +22,7 @@ const Form=()=> {
 }
   const handleSubmit = async(e) => {
     //e.preventDefault();
-    const response = await fetch(`http://localhost:5000/customer`, {
+    const response = await fetch(`${host}`, {
             method: "POST",
       
             headers: {

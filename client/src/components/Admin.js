@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+const host="https://uninterested-bee-swimsuit.cyclic.app/admin";
 const Admin = () => {
   const [db, setdb] = useState(null);
   const [success, setsuccess] = useState(0);
@@ -13,7 +13,7 @@ const Admin = () => {
   }
 
   const FetchU = async () => {
-    const response = await fetch(`http://localhost:5000/admin`, {
+    const response = await fetch(`${host}`, {
       method: "GET",
 
       headers: {
